@@ -26,6 +26,9 @@ class DoctorsController < ApplicationController
    puts "hiiiiiiiiiiiiiiiiiii"
   end
 
+  def second
+   puts "hellooooooooooooooo"
+  end
   private
 
   def doc_params
