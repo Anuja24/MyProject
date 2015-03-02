@@ -11,7 +11,7 @@ class DoctorsController < ApplicationController
      @doctar = Doctor.new(doc_params)
      @doctar.save
   end
-
+ # show methods
  def show
   
     @person = Person.find(params[:format ])
