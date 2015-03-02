@@ -1,0 +1,38 @@
+<table>
+<%=form_for :doctor, url:doctors_path,:html => {:multipart => true} do |c| %>
+<td><%=c.text_field :name%></td>
+<td><%=c.submit "create"%></td>
+</tr>
+  <p>
+    <label>My Avatar</label>
+  
+    <%= c.file_field :avatar %>
+   
+  </p>
+
+<%end%>
+</table>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Download Link</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @doctors.each do |d| %>
+      <tr>
+        <td><%= d.name %></td>
+        <td><%= link_to "Download doc", d.avatar.url%></td>
+      
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h3>Convert Voice into Text</h3>
+<p id="info"></p>
+<p><%= button_tag 'Start',id: "start_button", onclick: "startButton(event)"%></p>
+<p><%= text_area_tag :final_span, nil, rows: 10, cols: 50 %></p>

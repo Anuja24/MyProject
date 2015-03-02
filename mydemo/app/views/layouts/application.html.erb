@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mydemo</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div>
+   <%if user_signed_in?%>
+   Signed in as <%=current_user.email%>.not you?
+   <%=link_to "Signed out", destroy_user_session_path, method: :delete %>
+   <%else%>
+    <%=link_to "Signed up",  new_user_registration_path %> or  <%=link_to "Signed in", new_user_session_path %>
+   <%end%>
+  </div>
+<p class="notice"><%= notice %></p>
+ <p class="alert"><%= alert %></p>
+
+<%= yield %>
+
+</body>
+</html>
