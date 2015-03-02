@@ -22,6 +22,10 @@ class DoctorsController < ApplicationController
   # @data_img= send_data Person.first.image,:type=>"image/jpg",:disposition=>'inline'
  end
 
+ def mymethod
+
+ end
+
   private
 
   def doc_params
