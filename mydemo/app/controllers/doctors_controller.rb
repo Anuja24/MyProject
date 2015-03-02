@@ -5,15 +5,15 @@ class DoctorsController < ApplicationController
      @doctar = Doctor.new
   end
     
-
+# create method
   def create
 
      @doctar = Doctor.new(doc_params)
      @doctar.save
   end
-
+ # show methods
  def show
-  
+    
     @person = Person.find(params[:format ])
     send_data @person.image, :type => 'image/png',:disposition => 'inline'
   
